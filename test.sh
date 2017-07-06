@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DURATION=$1
-user_name=$2
-password=$3
+user_name=$1
+password=$2
+DURATION=$3
 cde="./cde"
 consulURL="http://controller.tzion.me"
 
@@ -99,9 +99,6 @@ curl -L https://github.com/tw-cde/cde-client-binary/releases/download/v0.1.9/cde
 chmod +x cde
 apt-get -y install git
 
-
-user_name=`date +%Y-%m-%d-%H-%M-%S`@test.com
-password=123
 if [ "$DURATION" = "" ]
 then
 	echo "input DURATION:"
@@ -127,7 +124,6 @@ echo -en "Host controller.tzion.me\n\tStrictHostKeyChecking no\n" > ~/.ssh/confi
 git config --global user.email $user_name
 git config --global user.name $user_name
 
-${cde} auth:register $consulURL --email $user_name --password $password
 ${cde} auth:login $consulURL --email $user_name --password $password
 mkdir $log_path
 echo -en "NO\t\tAppName\t\tstatus\t\tstart\t\tend\t\tduration(s)\n" >> $log_file_name
