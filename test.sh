@@ -95,7 +95,7 @@ report(){
 
 apt-get update
 apt-get -y install curl
-curl -L https://github.com/tw-cde/cde-client-binary/releases/download/v0.1.8/cde_linux_amd64 -o cde
+curl -L https://github.com/tw-cde/cde-client-binary/releases/download/v0.1.9/cde_linux_amd64 -o cde
 chmod +x cde
 apt-get -y install git
 
