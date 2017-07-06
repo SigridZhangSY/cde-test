@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -x
 user_name=$1
 password=$2
 DURATION=$3
@@ -58,7 +59,7 @@ deleteAppAndPath(){
 		pwd
 		${cde} apps:destroy
 		cd $current_path
-		rm -rf $current_path/$appName
+		# rm -rf $current_path/$appName
 	fi
 }
 
